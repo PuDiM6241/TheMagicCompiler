@@ -1,0 +1,25 @@
+upkeep
+Flavour Text: "Este eh um programa de teste" !!!
+legendary land yggdrasil cost 30 !!!
+land contador cost 0 !!!
+reveal (yggdrasil) !!!
+trigger(contador clashLessEquals 10) {
+    reveal ("Ganhei") !!!
+} inResponse(contador clashMore 21) {
+    reveal ("perdi") !!!
+} silence {
+    reveal ("Empate") !!!
+}
+legendary artifact peso cost 11 !!!
+whenever(peso clashMore 5) {
+    trigger(peso clashLessEquals 10) {
+        reveal ("Dentro do range") !!!
+    } silence {
+        reveal ("Fora do range") !!!
+    }
+    peso blight !!!
+}
+untilNext(land i cost 0 !!! i clashLess 5 !!! i proliferate) {
+    reveal (i) !!!
+}
+endStep
